@@ -350,20 +350,6 @@ considerations.** -->
 }}
 ```
 
-```
-{'q_id': '8houtx',
-  'title': 'Why does water heated to room temperature feel colder than the air around it?',
-  'selftext': '',
-  'document': '',
-  'subreddit': 'explainlikeimfive',
-  'answers': {'a_id': ['dylcnfk', 'dylcj49'],
-  'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. ... Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."],
-  'score': [5, 2]},
-  'title_urls': {'url': []},
-  'selftext_urls': {'url': []},
-  'answers_urls': {'url': []}}
-```
-
 **Additional Notes:** Add here
 
 #### Atypical Data Point
@@ -385,20 +371,6 @@ considerations.** -->
   "diagnosis": "malignant",
   "label": 1
 }}
-```
-
-```
-{'q_id': '8houtx',
-  'title': 'Why does water heated to room temperature feel colder than the air around it?',
-  'selftext': '',
-  'document': '',
-  'subreddit': 'explainlikeimfive',
-  'answers': {'a_id': ['dylcnfk', 'dylcj49'],
-  'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. ... Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."],
-  'score': [5, 2]},
-  'title_urls': {'url': []},
-  'selftext_urls': {'url': []},
-  'answers_urls': {'url': []}}
 ```
 
 ## Motivations & Intentions
@@ -429,7 +401,6 @@ motivations for the dataset.) -->
 #### Dataset Use(s)
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Safe for production use
 - Safe for research use
 - Only approved use
 
@@ -440,13 +411,16 @@ motivations for the dataset.) -->
 
 Use additional notes to capture any specific patterns that readers should
 look out for, or other relevant information or considerations. -->
-**Suitable Use Case:** Summarize here. Include links where necessary.
+**Suitable Use Case:** The dataset is ideal for developing and evaluating AI/ML models for:
 
-**Suitable Use Case:** Summarize here. Include links where necessary.
+Skin cancer classification: Predicting malignancy using images + clinical metadata.
 
-**Suitable Use Case:** Summarize here. Include links where necessary.
+Multimodal learning: Combining image data with structured metadata.
 
-**Additional Notes:** Add here
+Weakly vs. strongly supervised learning: Handling mixed label reliability.
+
+Explainable AI in healthcare: Understanding model decisions using interpretable features like asymmetry, color variation, etc.
+
 
 #### Unsuitable Use Case(s)
 <!-- scope: microscope -->
@@ -454,13 +428,14 @@ look out for, or other relevant information or considerations. -->
 
 Use additional notes to capture any specific patterns that readers should look
 out for, or other relevant information or considerations. -->
-**Unsuitable Use Case:** Summarize here. Include links where necessary.
+**Unsuitable Use Case:** 
+Clinical Use: Not for real-world diagnostics or treatment.
 
-**Unsuitable Use Case:** Summarize here. Include links where necessary.
+Commercial Use: Prohibited under CC BY-NC 4.0 license.
 
-**Unsuitable Use Case:** Summarize here. Include links where necessary.
+Re-identification: Any attempt to identify individuals is not allowed.
 
-**Additional Notes:** Add here
+Misuse of Results: Avoid overstating performance without noting dataset limitations.
 
 #### Research and Problem Space(s)
 <!-- scope: periscope -->
@@ -476,23 +451,21 @@ and/or production.
 
 Use additional notes to capture any specific patterns that readers should look
 out for, or other relevant information or considerations. -->
-**Guidelines & Steps:** Summarize here. Include links where necessary.
+**Guidelines & Steps:** 
+Primary citation: https://www.nature.com/articles/s41597-024-03743-w
+SLICE-3D ISIC 2024 Challenge Dataset. International Skin Imaging Collaboration (ISIC). https://slice-isic2024.grand-challenge.org/
 
 **BiBTeX:**
 ```
-@article{kuznetsova2020open,
-  title={The open images dataset v4},
-  author={Kuznetsova, Alina and Rom, Hassan and Alldrin, and others},
-  journal={International Journal of Computer Vision},
-  volume={128},
-  number={7},
-  pages={1956--1981},
-  year={2020},
-  publisher={Springer}
+@misc{slice3d2024,
+  title = {SLICE-3D ISIC 2024 Challenge Dataset},
+  author = {ISIC Challenge Team},
+  year = {2024},
+  note = {\url{https://slice-isic2024.grand-challenge.org/}},
+  howpublished = {\url{https://slice-isic2024.grand-challenge.org/}}
 }
-```
 
-**Additional Notes:** Add here
+```
 
 ## Access, Rentention, & Wipeout
 ### Access
@@ -527,7 +500,7 @@ This dataset requires membership in [specific] database groups:
 Code to download data:
 ```
 !kaggle competitions download -c isic-2024-challenge
-...
+
 ```
 
 #### Access Control List(s)
