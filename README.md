@@ -1,9 +1,8 @@
 # 📊 Early Skin Cancer Detection: Bringing Dermatology to Everyone
 
-## Project Description (Add the Big Idea)
+## Project Description 
 
-> Example:  
-> AI-driven smartphone-based image quality  skin cancer detection can democratize early diagnosis, improving global healthcare accessibility and patient outcomes.
+> AI-driven smartphone-based skin cancer detection can democratize early diagnosis, improving global healthcare accessibility and patient outcomes.
 
 .
 
