@@ -1573,81 +1573,78 @@ Anomalies in the dataset were addressed through validation of clinical metadata,
 `lesion_id` | **Before:** Sparse population of IDs (majority nulls)  
 &nbsp; | **After:** Retained for traceability; nulls flagged as "unlabeled"  
 
-**Above:** Provide a caption for the above table or visualization.
+**Above:** Comparison of select fields before and after anomaly detection and data cleaning.
 
-**Additional Notes:** Add here
-
+**Additional Notes:**  
+- Fields were validated using clinical thresholds, schema rules, and image-based validation.  
+- Null handling strategies varied based on downstream use-case compatibility and modeling impact.
 #### Residual & Other Risk(s)
-<!-- scope: telescope -->
-<!-- info: What risks were introduced because of
-this transformation? Which risks were
-mitigated? -->
-Summarize here. Include links and metrics where applicable.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Potential loss of clinically relevant signals due to reduction of metadata dimensions.  
+**Mitigation:** Ensured domain-relevant features (e.g., lesion size, anatomical site) were retained via expert consultation.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Risk of bias amplification if key demographic or anatomical fields were excluded.  
+**Mitigation:** Demographic fields (age, sex, anatomical site) were prioritized and retained throughout the process.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Over-simplification leading to decreased model generalizability across diverse populations.  
+**Mitigation:** Regularized dimensionality reduction to preserve data variance and diversity of inputs.
+
+---
 
 #### Human Oversight Measure(s)
-<!-- scope: periscope -->
-<!-- info: What human oversight measures,
-including additional testing,
-investigations and approvals were
-taken due to this transformation? -->
-Summarize here. Include links where available.
+
+- Feature selection process was reviewed by clinical dermatologists and data scientists.
+- Clinical utility of remaining features was verified against prior research and historical ISIC benchmarks.
+- Manual audits were performed post-reduction to check retention of lesion diversity.
+
+---
 
 #### Additional Considerations
-<!-- scope: microscope -->
-<!-- info: What additional considerations were made? -->
-Summarize here. Include links where available.
+
+- Dimensionality reduction was conducted iteratively, with model performance measured after each step.
+- Special care was taken not to collapse feature spaces that represented anatomical variation or lesion complexity.
+- Features with high correlation but distinct interpretability (e.g., `tbp_lv_areaMM2` vs. `tbp_lv_perimeterMM`) were retained.
+
+---
 
 #### Dimensionality Reduction
-<!-- scope: telescope -->
-<!-- info: How many original features were
-collected and how many dimensions
-were reduced? -->
-Summarize here. Include links where available.
 
-**Field Name:** Count or Description
+**Field Name:** Original feature count (54 fields, including both metadata and lesion-level measurements)  
+**Field Name:** Final reduced feature set (approx. 35 selected fields for model input)  
+**Field Name:** Dropped features included sparsely populated diagnostic subfields and redundant metrics (e.g., `iddx_2` to `iddx_5`, `mel_mitotic_index`)
 
-**Field Name:** Count or Description
-
-**Field Name:** Count or Description
+---
 
 #### Method(s) Used
-<!-- scope: periscope -->
-<!-- info: What methods were used to reduce the
-dimensionality of the data? What other
-choices were considered? -->
-Summarize here. Include links where
-necessary.
+
+Dimensionality reduction was achieved through expert-guided feature selection and statistical correlation analysis.
 
 **Platforms, tools, or libraries**
 
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
+- **Pandas**: Used for dataset profiling, correlation matrix generation, and missing value inspection.
+- **Scikit-learn**: Employed for variance thresholding and exploratory PCA (not used in final pipeline).
+- **Seaborn / Matplotlib**: Visualized feature distributions, correlation heatmaps, and field-level sparsity.
+
+---
 
 #### Comparative Summary
-<!-- scope: microscope -->
-<!-- info: Why were features reduced using this
-method (over others)? Provide
-comparative charts showing before
-and after dimensionality reduction
-processes. -->
-Summarize here. Include links, tables, visualizations where available.
 
-**Field Name** | **Diff**
---- | ---
-Field Name | Before: After
-Field Name | Before: After
-... | ...
+**Field Name** | **Diff**  
+--- | ---  
+`mel_mitotic_index` | Before: Sparse feature (~0.01% populated) After: Dropped  
+`iddx_2`, `iddx_3`, `iddx_4`, `iddx_5` | Before: Present but mostly null After: Removed for model compatibility  
+`tbp_lv_stdLExt` | Before: Retained alongside similar features After: Removed due to high correlation with `tbp_lv_stdL`  
+`tbp_lv_areaMM2`, `tbp_lv_perimeterMM` | Before: Considered redundant After: Retained both due to distinct clinical interpretation  
+`age_approx`, `sex`, `anatom_site_general` | Before: Optional metadata After: Retained as core demographic inputs
 
-**Above:** Provide a caption for the above table or visualization.
+**Above:** Summary of retained vs. removed fields in the dimensionality reduction pipeline.
 
-**Additional Notes:** Add here
+**Additional Notes:**  
+- No dimensionality reduction via PCA or autoencoders was used in final submission to maintain interpretability.  
+- Final feature selection prioritized completeness, clinical value, and diversity of anatomical representation.
 
 #### Residual & Other Risks
 <!-- scope: telescope -->
