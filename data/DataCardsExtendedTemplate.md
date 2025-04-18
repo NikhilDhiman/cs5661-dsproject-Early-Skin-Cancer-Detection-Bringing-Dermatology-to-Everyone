@@ -1533,13 +1533,23 @@ Handling: Detected anomalies were either corrected or excluded from the dataset 
 <!-- scope: periscope -->
 <!-- info: What methods were used to detect
 anomalies or outliers? -->
-Summarize here. Include links where necessary.
+Tools:
+
+Custom Scripts: Developed for metadata validation and consistency checks.​
+
+Image Processing Libraries: Utilized for detecting image artifacts and quality issues.
 
 **Platforms, tools, or libraries**
 
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
+Pandas: Used for structured metadata validation and detecting missing or inconsistent values.
+
+OpenCV: Employed to check for corrupted images, invalid pixel ranges, or structural abnormalities in image files.
+
+Matplotlib: Utilized for visualizing data distributions to identify statistical outliers in clinical measurements (e.g., lesion size).
+
+NumPy: Assisted with numerical validation checks and threshold-based anomaly detection.
+
+Custom Python Scripts: Designed for domain-specific rule enforcement and logging anomalies across datasets.
 
 #### Comparative Summary
 <!-- scope: microscope -->
