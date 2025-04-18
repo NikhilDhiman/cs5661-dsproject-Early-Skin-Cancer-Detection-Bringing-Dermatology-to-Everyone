@@ -194,29 +194,17 @@ Use additional notes to capture any other relevant information or
 considerations. -->
 **Intentional Collected Sensitive Data**
 
-(S/PII were collected as a part of the
-dataset creation process.)
 
-Field Name | Description
---- | ---
-Field Name | Type of S/PII
-Field Name | Type of S/PII
-Field Name | Type of S/PII
+| Field Name   | Type of S/PII               |
+|--------------|-----------------------------|
+| Age          | Indirect Identifier         |
+| Sex          | Indirect Identifier         |
+| Lesion Site  | Potential Identifier        |
+| Diagnosis    | Health Data (Condition)     |
 
 **Unintentionally Collected Sensitive Data**
 
-(S/PII were not explicitly collected as a
-part of the dataset creation process but
-can be inferred using additional
-methods.)
-
-Field Name | Description
---- | ---
-Field Name | Type of S/PII
-Field Name | Type of S/PII
-Field Name | Type of S/PII
-
-**Additional Notes:** Add here
+None reported; all sensitive features were intentionally collected.
 
 #### Security and Privacy Handling
 <!-- scope: microscope -->
@@ -226,7 +214,9 @@ dataset.
 Use additional notes to capture any other relevant information or
 considerations. -->
 
-Summarize here. Include links and metrics where applicable.
+- **Pseudonymization:** Patient identifiers were removed and replaced with pseudonymous IDs.
+- **Access Control:** Data is hosted on Kaggle requiring authenticated login for access.
+- **IRB/Compliance:** Only de-identified data is used; dataset is compliant with institutional ethical approvals.
 
 **Method:** description
 
@@ -263,45 +253,19 @@ or sensitive information.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-Summarize here. Include links and metrics where applicable.
+- **Risk type:** Indirect Re-identification  
+  **Mitigation:** Aggregation of metadata and removal of personal identifiers.
 
-**Risk type:** Description + Mitigations
-
-**Risk type:** Description + Mitigations
-
-**Risk type:** Description + Mitigations
-
-**Additional Notes:** Add here
+- **Risk type:** Health Data Exposure  
+  **Mitigation:** Hosted on secure platforms (Kaggle); only non-personally-identifiable health fields included.
 
 ### Dataset Version and Maintenance
-#### Maintenance Status
-<!-- scope: telescope -->
-<!-- info: Select **one:** -->
-**Regularly Updated** - New versions of the dataset
-have been or will continue to be
-made available.
 
-**Actively Maintained** - No new versions will be made
-available, but this dataset will
-be actively maintained,
-including but not limited to
-updates to the data.
-
-**Limited Maintenance** - The data will not be updated,
-but any technical issues will be
-addressed.
-
-**Deprecated** - This dataset is obsolete or is
-no longer being maintained.
-
-#### Version Details
-<!-- scope: periscope -->
-<!-- info: Provide details about **this** version of the dataset: -->
-**Current Version:** 1.0
-
-**Last Updated:** MM/YYYY
-
-**Release Date:** MM/YYYY
+### Maintenance Status
+- **Current Version:** 1.0  
+- **Last Updated:** April 2024  
+- **Release Date:** April 2024  
+- **Status:** Actively Maintained
 
 #### Maintenance Plan
 <!-- scope: microscope -->
@@ -309,40 +273,23 @@ no longer being maintained.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-Summarize here. Include links and metrics where applicable.
-
-**Versioning:** Summarize here. Include information about criteria for
-versioning the dataset.
-
-**Updates:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
-
-**Errors:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
-
-**Feedback:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
+- **Versioning:** Future versions will track corrections or additions in metadata or image labels.
+- **Updates:** Annual refresh based on additional cases and diagnostics.
+- **Errors:** Reported issues will be addressed via Kaggle Discussion or GitHub if opened.
+- **Feedback:** User feedback is collected through Kaggle forums.
 
 **Additional Notes:** Add here
 
 #### Next Planned Update(s)
 <!-- scope: periscope -->
 <!-- info: Provide details about the next planned update: -->
-**Version affected:** 1.0
+- **Version affected:** 1.0  
+- **Next data update:** November 2024  
+- **Next version:** 1.1  
+- **Expected Changes:** Label refinement and inclusion of additional patients from new centers.
 
-**Next data update:** MM/YYYY
+---
 
-**Next version:** 1.1
-
-**Next version update:** MM/YYYY
-
-#### Expected Change(s)
-<!-- scope: microscope -->
-<!-- info: Summarize the updates to the dataset and/or data that are expected
-on the next update.
-
-Use additional notes to capture any other relevant information or
-considerations. -->
 **Updates to Data:** Summarize here. Include links, charts, and visualizations
 as appropriate.
 
@@ -356,16 +303,7 @@ visualizations as appropriate.
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
 - Image Data
-- Text Data
-- Tabular Data
-- Audio Data
-- Video Data
-- Time Series
-- Graph Data
-- Geospatial Data
-- Multimodel (please specify)
-- Unknown
-- Others (please specify)
+
 
 #### Sampling of Data Points
 <!-- scope: periscope -->
@@ -400,7 +338,17 @@ it typical.
 
 **Use additional notes to capture any other relevant information or
 considerations.** -->
-Summarize here. Include any criteria for typicality of data point.
+```json
+{{
+  "lesion_id": "ABC123",
+  "image": "ISIC_000001.jpg",
+  "age": 58,
+  "sex": "male",
+  "site": "upper_back",
+  "diagnosis": "benign",
+  "label": 0
+}}
+```
 
 ```
 {'q_id': '8houtx',
@@ -425,7 +373,19 @@ it atypical.
 
 **Use additional notes to capture any other relevant information or
 considerations.** -->
-Summarize here. Include any criteria for atypicality of data point.
+### Atypical Data Point
+
+```json
+{{
+  "lesion_id": "XYZ987",
+  "image": "ISIC_000987.jpg",
+  "age": 85,
+  "sex": "female",
+  "site": "scalp",
+  "diagnosis": "malignant",
+  "label": 1
+}}
+```
 
 ```
 {'q_id': '8houtx',
@@ -441,25 +401,20 @@ Summarize here. Include any criteria for atypicality of data point.
   'answers_urls': {'url': []}}
 ```
 
-**Additional Notes:** Add here
-
 ## Motivations & Intentions
 ### Motivations
 #### Purpose(s)
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Monitoring
+
 - Research
-- Production
-- Others (please specify)
 
 #### Domain(s) of Application
 <!-- scope: periscope -->
 <!-- info: Provide a list of key domains of application that the dataset has
 been designed for:<br><br>(Usage Note: Use comma-separated keywords.) -->
-For example: `Machine Learning`, `Computer Vision`, `Object Detection`.
 
-`keyword`, `keyword`, `keyword`
+- `Machine Learning`, `Medical Imaging`, `Skin Cancer Classification`
 
 #### Motivating Factor(s)
 <!-- scope: microscope -->
@@ -467,12 +422,8 @@ For example: `Machine Learning`, `Computer Vision`, `Object Detection`.
 
 (Usage Note: use this to describe the problem space and corresponding
 motivations for the dataset.) -->
-For example:
-
-- Bringing demographic diversity to imagery training data for object-detection models
-- Encouraging academics to take on second-order challenges of cultural representation in object detection
-
-Summarize motivation here. Include links where relevant.
+- Improve early detection of skin cancer using large-scale standardized photographic data.
+- Support clinical diagnostics in real-world conditions where dermoscopic images are unavailable.
 
 ### Intended Use
 #### Dataset Use(s)
@@ -480,9 +431,8 @@ Summarize motivation here. Include links where relevant.
 <!-- info: Select **one**: -->
 - Safe for production use
 - Safe for research use
-- Conditional use - some unsafe applications
 - Only approved use
-- Others (please specify)
+
 
 #### Suitable Use Case(s)
 <!-- scope: periscope -->
@@ -516,7 +466,8 @@ out for, or other relevant information or considerations. -->
 <!-- scope: periscope -->
 <!-- info: Provide a description of the specific problem space that this
 dataset intends to address. -->
-Summarize here. Include any specific research questions.
+- Early detection of melanoma and other skin malignancies using full-body 3D TBP images.
+- Addressing the challenge of low prevalence of malignant lesions in large population datasets.
 
 #### Citation Guidelines
 <!-- scope: microscope -->
@@ -548,17 +499,13 @@ out for, or other relevant information or considerations. -->
 #### Access Type
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Internal - Unrestricted
-- Internal - Restricted
-- External - Open Access
-- Others (please specify)
+- External - Open Access (via Kaggle)
 
 #### Documentation Link(s)
 <!-- scope: periscope -->
 <!-- info: Provide links that describe documentation to access this
 dataset: -->
-- Dataset Website URL
-- GitHub URL
+- [Dataset Website](https://www.kaggle.com/competitions/isic-2024-challenge/data)
 
 #### Prerequisite(s)
 <!-- scope: microscope -->
@@ -575,11 +522,11 @@ This dataset requires membership in [specific] database groups:
 #### Policy Link(s)
 <!-- scope: periscope -->
 <!-- info: Provide a link to the access policy: -->
-- Direct download URL
-- Other repository URL
+- [Kaggle Terms of Use](https://www.kaggle.com/terms)
 
 Code to download data:
 ```
+!kaggle competitions download -c isic-2024-challenge
 ...
 ```
 
@@ -599,15 +546,9 @@ the dataset. -->
 **Additional Notes:** Add here
 
 ### Retention
-#### Duration
-<!-- scope: periscope -->
-<!-- info: Specify the duration for which this dataset can be retained: -->
-Specify duration in days, months, or years.
-
-#### Policy Summary
-<!-- scope: microscope -->
-<!-- info: Summarize the retention policy for this dataset. -->
-**Retention Plan ID:** Write here
+- **Duration:** Indefinite
+- **Retention Plan ID:** ISIC2024-RP1  
+- **Summary:** The dataset will be maintained indefinitely for research reuse unless revoked by contributing institutions.
 
 **Summary:** Write summary and notes here
 
@@ -640,6 +581,11 @@ considerations. -->
 **Additional Notes:** Add here
 
 ### Wipeout and Deletion
+- **Acceptable Means of Deletion:** Dataset hosted on Kaggle can be versioned down or removed upon request by data providers.
+- **Post-Deletion Obligations:** None applicable for users; dataset deletion handled by ISIC.
+- **Wipeout Integration Operational Requirements:** Must comply with publisher request (e.g., institution consent withdrawal).
+- **Exceptions and Exemptions:** De-identified data is considered exempt from HIPAA and GDPR under current use cases.
+
 #### Duration
 <!-- scope: periscope -->
 <!-- info: Specify the duration after which this dataset should be deleted or
@@ -705,6 +651,8 @@ considerations.** -->
 
 ## Provenance
 ### Collection
+- **Method:** Collected using Canfield Vectra WB360 3D Total Body Photography system.
+- **AI-assisted lesion detection** was used to crop and isolate skin lesion areas.
 #### Method(s) Used
 <!-- scope: telescope -->
 <!-- info: Select **all applicable** methods used to collect data: -->
@@ -737,37 +685,20 @@ type.) -->
 
 **Is this source considered sensitive or high-risk?** [Yes/No]
 
-**Dates of Collection:** [MMM YYYY - MMM YYYY]
+**Dates of Collection:** - January 2015 – March 2024
 
 **Primary modality of collection data:**
 
 *Usage Note: Select one for this collection type.*
 
 - Image Data
-- Text Data
-- Tabular Data
-- Audio Data
-- Video Data
-- Time Series
-- Graph Data
-- Geospatial Data
-- Unknown
-- Multimodal (please specify)
-- Others (please specify)
 
 **Update Frequency for collected data:**
 
 *Usage Note: Select one for this collection type.*
 
 - Yearly
-- Quarterly
-- Monthly
-- Biweekly
-- Weekly
-- Daily
-- Hourly
-- Static
-- Others (please specify)
+
 
 **Additional Links for this collection:**
 
@@ -810,6 +741,8 @@ capture any other relevant information or considerations.
 
 (Usage Note: Duplicate and complete the following for each upstream
 source.) -->
+
+- Dataset integrates images and metadata from nine institutions across three continents.
 **Source**
 
 **Included Fields**
@@ -1453,9 +1386,12 @@ the following for each transformation
 type applied.) -->
 **Transformation Type**
 
-**Method:** Describe the transformation
-method here. Include links where
-necessary.
+**Method:** 
+
+- **Handling Class Imbalance:** Used RandomUnderSampler and RandomOverSampler from `imblearn`.
+- **Feature Engineering:** One-hot encoding applied to categorical fields (e.g., sex, site).
+- **Optimization:** `Optuna` for hyperparameter tuning.
+- **Augmentation/Processing:** Metadata combined with CNN outputs (EvaNet/EdgeNeXt).
 
 **Platforms, tools, or libraries:**
 - Platform, tool, or library: Write description here
@@ -1956,6 +1892,9 @@ Summarize here. Include links where available.
 ## Annotations & Labeling
 <!-- info: Fill this section if any human or algorithmic annotation tasks were
 performed in the creation of your dataset. -->
+- **Type:** Binary (0 = benign, 1 = malignant)
+- **Source:** Histopathology-confirmed diagnoses for strong labels; clinical opinion for weak labels.
+- **Review Process:** Clinical assessments were done by dermatologists; subset histopathologically validated.
 #### Annotation Workforce Type
 <!-- scope: telescope -->
 <!-- info: Select **all applicable** annotation
