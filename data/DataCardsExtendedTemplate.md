@@ -1504,7 +1504,11 @@ Summarize here. Include links and metrics where applicable.
 including additional testing,
 investigations and approvals were
 taken due to this transformation? -->
-Summarize here. Include links where available.
+Clinical Validation: Lesion diagnoses were confirmed through histopathology, ensuring high-quality ground truth labels. ​
+
+Expert Review: Dermatologists reviewed annotations, with a subset validated histopathologically.​
+
+Standardization: ISIC developed standards for image acquisition, metadata, and privacy to ensure data quality and interoperability. ​
 
 #### Additional Considerations
 <!-- scope: microscope -->
