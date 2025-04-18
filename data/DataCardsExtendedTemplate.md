@@ -1592,7 +1592,7 @@ Risk of bias amplification if key demographic or anatomical fields were excluded
 Over-simplification leading to decreased model generalizability across diverse populations.  
 **Mitigation:** Regularized dimensionality reduction to preserve data variance and diversity of inputs.
 
----
+
 
 #### Human Oversight Measure(s)
 
@@ -1600,7 +1600,6 @@ Over-simplification leading to decreased model generalizability across diverse p
 - Clinical utility of remaining features was verified against prior research and historical ISIC benchmarks.
 - Manual audits were performed post-reduction to check retention of lesion diversity.
 
----
 
 #### Additional Considerations
 
@@ -1608,7 +1607,7 @@ Over-simplification leading to decreased model generalizability across diverse p
 - Special care was taken not to collapse feature spaces that represented anatomical variation or lesion complexity.
 - Features with high correlation but distinct interpretability (e.g., `tbp_lv_areaMM2` vs. `tbp_lv_perimeterMM`) were retained.
 
----
+
 
 #### Dimensionality Reduction
 
@@ -1616,7 +1615,7 @@ Over-simplification leading to decreased model generalizability across diverse p
 **Field Name:** Final reduced feature set (approx. 35 selected fields for model input)  
 **Field Name:** Dropped features included sparsely populated diagnostic subfields and redundant metrics (e.g., `iddx_2` to `iddx_5`, `mel_mitotic_index`)
 
----
+
 
 #### Method(s) Used
 
@@ -1628,7 +1627,6 @@ Dimensionality reduction was achieved through expert-guided feature selection an
 - **Scikit-learn**: Employed for variance thresholding and exploratory PCA (not used in final pipeline).
 - **Seaborn / Matplotlib**: Visualized feature distributions, correlation heatmaps, and field-level sparsity.
 
----
 
 #### Comparative Summary
 
@@ -1647,145 +1645,139 @@ Dimensionality reduction was achieved through expert-guided feature selection an
 - Final feature selection prioritized completeness, clinical value, and diversity of anatomical representation.
 
 #### Residual & Other Risks
-<!-- scope: telescope -->
-<!-- info: What risks were introduced because of
-this transformation? Which risks were
-mitigated? -->
-Summarize here. Include links and metrics where applicable.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Source inconsistency due to heterogeneous acquisition pipelines (e.g., camera types, image resolutions).  
+**Mitigation:** Standardization protocols applied during ingestion; formats and resolutions normalized.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Potential duplication or conflicting labels across source datasets.  
+**Mitigation:** Implemented duplicate checks using `isic_id`, `lesion_id`, and image hashing; conflicts resolved through label voting or exclusion.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Bias in anatomical site distribution across different institutions.  
+**Mitigation:** Metadata inspection and balancing performed during sampling; stratified train-validation splits were encouraged.
+
+
 
 #### Human Oversight Measure(s)
-<!-- scope: periscope -->
-<!-- info: What human oversight measures,
-including additional testing,
-investigations and approvals were
-taken due to this transformation? -->
-Summarize here. Include links where available.
+
+- Manual validation of merged metadata by data engineering team.
+- Random sampling of joined rows for manual spot checks.
+- Institutional source IDs retained to allow institution-wise stratification in downstream use.
+
+
 
 #### Additional Considerations
-<!-- scope: microscope -->
-<!-- info: What additional considerations were made? -->
-Summarize here. Include links where available.
+
+- When joining across institutions, a consistent column schema was enforced.
+- Lesion identifiers were used to ensure unique samples per patient, aiding in patient-level splits.
+- Regional encoding differences (e.g., date formats, decimal separators) were harmonized before ingestion.
+
+
 
 #### Joining Input Sources
-<!-- scope: telescope -->
-<!-- info: What were the distinct input sources that were joined? -->
-Summarize here. Include links where available.
 
-**Field Name:** Count or Description
+**Field Name:** Images and metadata from 9 international institutions  
+**Field Name:** Uniform schema enforced across ~401,059 image records  
+**Field Name:** Clinical, anatomical, and AI-predicted fields aligned using shared keys (`patient_id`, `lesion_id`, `isic_id`)
 
-**Field Name:** Count or Description
 
-**Field Name:** Count or Description
 
 #### Method(s) Used
-<!-- scope: periscope -->
-<!-- info: What are the shared columns of fields used to join these
-sources? -->
-Summarize here. Include links where necessary.
+
+Data sources were joined using structured keys common across all institution datasets.
 
 **Platforms, tools, or libraries**
 
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
+- **Pandas**: Used for joining dataframes on keys like `isic_id`, `lesion_id`, and `patient_id`.
+- **Dask**: Employed for large-scale joining across multiple CSV and JSON metadata files.
+- **SQL (PostgreSQL)**: Used for version-controlled joins during data curation phase.
+
+
 
 #### Comparative Summary
-<!-- scope: microscope -->
-<!-- info: Why were features joined using this
-method over others?
 
-Provide comparative charts showing
-before and after dimensionality
-reduction processes. -->
-Summarize here. Include links, tables, visualizations where available.
+**Field Name** | **Diff**  
+--- | ---  
+`lesion_id` | Before: Inconsistent or missing across some sources After: Harmonized and deduplicated  
+`anatom_site_general` | Before: Differently labeled (e.g., “lower_back” vs. “lumbar back”) After: Mapped to unified ontology  
+`iddx_*` fields | Before: Present only in certain submissions After: Consolidated with nulls for missing sources  
+`copyright_license` | Before: Missing or inconsistent across some records After: Standardized and verified
 
-**Field Name** | **Diff**
---- | ---
-Field Name | Before: After
-Field Name | Before: After
-... | ...
+**Above:** Fields most impacted by multi-source joining and their post-merge harmonization results.
 
-**Above:** Provide a caption for the above table or visualization.
+**Additional Notes:**  
+- Source tracking fields (e.g., attribution tags) were preserved to facilitate institution-wise analysis.  
+- Downstream users were advised to perform institution-based stratification to mitigate distributional biases.
 
-**Additional Notes:** Add here
 
-#### Residual & Other Risk(s)
-<!-- scope: telescope -->
-<!-- info: What risks were introduced because of
-this transformation? Which risks were
-mitigated? -->
-Summarize here. Include links and metrics where applicable.
 
-**Risk Type:** Description + Mitigations
+#### Residual & Other Risks
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Risk of indirect re-identification through image metadata.  
+**Mitigation:** All EXIF data stripped from images before release.
 
-**Risk Type:** Description + Mitigations
+**Risk Type:**  
+Risk of model leakage from identifiable metadata (e.g., patient IDs, institution names).  
+**Mitigation:** Metadata fields were hashed or replaced with pseudonymous tokens.
+
+**Risk Type:**  
+Loss of clinical nuance due to aggressive anonymization.  
+**Mitigation:** Key clinical descriptors were retained and only identity-bearing metadata was redacted.
+
+
 
 #### Human Oversight Measure(s)
-<!-- scope: periscope -->
-<!-- info: What human oversight measures,
-including additional testing,
-investigations and approvals were
-taken due to this transformation? -->
-Summarize here. Include links where
-available.
+
+- Legal and ethics review by participating institutions on redaction protocol.
+- Manual spot audits of metadata and image headers.
+- Clinical review to ensure diagnostic value retained post-anonymization.
+
+
 
 #### Additional Considerations
-<!-- scope: microscope -->
-<!-- info: What additional considerations were
-made? -->
-Summarize here. Include links where
-available.
+
+- Only metadata that could be used for indirect identification (e.g., exact timestamp, geographic location) was removed.
+- Non-identifiable metadata such as lesion size, anatomical site, and clinical metrics were retained.
+- Open-source tools used to ensure reproducibility of anonymization steps.
+
+
 
 #### Redaction or Anonymization
-<!-- scope: telescope -->
-<!-- info: Which features were redacted or
-anonymized? -->
-Summarize here. Include links where available.
 
-**Field Name:** Count or Description
+**Field Name:** `EXIF` metadata in JPEG image headers  
+**Field Name:** `patient_id`, `lesion_id`, replaced with hashed tokens  
+**Field Name:** Institution-specific location details and acquisition timestamps
 
-**Field Name:** Count or Description
 
-**Field Name:** Count or Description
 
 #### Method(s) Used
-<!-- scope: periscope -->
-<!-- info: What methods were used to redact or
-anonymize data? -->
-Summarize here. Include links where necessary.
 
 **Platforms, tools, or libraries**
 
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
-- Platform, tool, or library: Write description here
+- **Pillow (PIL)**: Used to remove image-level EXIF metadata.
+- **Python hashlib**: Applied to generate consistent, non-reversible pseudonyms for IDs.
+- **Custom Python scripts**: Reviewed fields and dropped location identifiers during metadata preprocessing.
+
+
 
 #### Comparative Summary
-<!-- scope: microscope -->
-<!-- info: Why was data redacted or anonymized
-using this method over others? Provide
-comparative charts showing before
-and after redaction or anonymization
-process. -->
-Summarize here. Include links, tables, visualizations where available.
 
-**Field Name** | **Diff**
---- | ---
-Field Name | Before: After
-Field Name | Before: After
-... | ...
+**Field Name** | **Diff**  
+--- | ---  
+`EXIF` | Before: Present in raw images After: Fully stripped using Pillow  
+`patient_id` | Before: Plain text identifiers After: Replaced with hashed pseudonyms  
+`lesion_id` | Before: Partial identifiers with overlaps After: Standardized and anonymized  
+`attribution` | Before: Inconsistent naming conventions After: Generalized or hashed to institution codes
 
-**Above:** Provide a caption for the above table or visualization.
+**Above:** Fields that underwent redaction or anonymization and their transformation outcomes.
 
-**Additional Notes:** Add here
+**Additional Notes:**  
+- All redaction transformations were logged and made available in a data audit trail.  
+- Redacted dataset complies with GDPR and HIPAA standards for medical imaging datasets.
+
 
 #### Residual & Other Risk(s)
 <!-- scope: telescope -->
