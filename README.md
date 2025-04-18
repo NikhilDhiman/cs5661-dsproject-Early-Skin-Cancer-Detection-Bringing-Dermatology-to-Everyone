@@ -13,7 +13,7 @@
 - `data/`: Raw and processed datasets
 - `notebooks/`: Jupyter Notebooks for data validation and analysis
 - `src/`: Preprocessing or helper scripts
-- `data_card.md`: Dataset documentation ([Google Data Card](https://github.com/PAIR-code/datacardsplaybook/blob/main/templates/DataCardsExtendedTemplate.md))
+- `data_card.md`: Dataset documentation
 - `README.md`: This file
 
 ---
@@ -33,7 +33,7 @@
 2. **Create and activate a virtual environment**
 
    ```bash
-   # pip install virtualenv (if you don't have virtualevn installed)
+   # pip install virtualenv
    virtualenv venv
    source venv/bin/activate
    ```
@@ -52,5 +52,9 @@ We want to thank the following individuals who have contributed to this project:
 
 | Name | GitHub Username |
 |---|---|
-| Jesus A. Beltran | [3eltran23](https://github.com/3eltran23) |
-| Collaborator Name 2 (optional) | [Collaborator Username 2](https://github.com/CollaboratorUsername2) (optional) |
+| Nikhil Dhiman | [3eltran23](https://github.com/3eltran23) |
+| Yamini Mandadi | [yami7](https://github.com/yami7)  |
+| Jaydeep Dhirubhai Gondaliya | [Jdpatel180296](https://github.com/Jdpatel180296)  |
+| Sudipta Bhatta | [sudiptabhatta](https://github.com/sudiptabhatta)  |
+| Akash Saraf | [sarafakash](https://github.com/sarafakash)  |
+| Saurabh Wankhade | [saurabhsudowankhade](https://github.com/saurabhsudowankhade)  |
