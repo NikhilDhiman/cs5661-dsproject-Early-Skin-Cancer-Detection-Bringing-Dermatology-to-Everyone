@@ -1513,7 +1513,9 @@ Standardization: ISIC developed standards for image acquisition, metadata, and p
 #### Additional Considerations
 <!-- scope: microscope -->
 <!-- info: What additional considerations were made? -->
-Summarize here. Include links where available.
+Dataset Composition: The SLICE-3D dataset comprises 401,059 cropped images (15mm x 15mm) centered on lesions, extracted from 3D total body photographs (TBPs).
+
+Metadata: Each image includes metadata such as age, sex, anatomical site, clinical size, and lesion identifiers.
 
 #### Anomalies
 <!-- scope: telescope -->
@@ -1522,13 +1524,10 @@ detected?
 If at all, how were detected anomalies
 or outliers handled?
 Why or why not? -->
-Summarize here. Include links where available.
+Detection: Anomalies were identified through expert review and automated checks for inconsistencies in metadata and image quality.​
 
-**Field Name:** Count or Description
+Handling: Detected anomalies were either corrected or excluded from the dataset to maintain integrity.​
 
-**Field Name:** Count or Description
-
-**Field Name:** Count or Description
 
 #### Method(s) Used
 <!-- scope: periscope -->
