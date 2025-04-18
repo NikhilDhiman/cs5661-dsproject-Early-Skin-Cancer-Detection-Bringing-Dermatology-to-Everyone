@@ -27,8 +27,8 @@
 
 1. **Clone the Repository**
    ```bash
-   git clone <your-repo-url>
-   cd <your-repo-folder>
+   git clone https://github.com/NikhilDhiman/cs5661-dsproject-Early-Skin-Cancer-Detection-Bringing-Dermatology-to-Everyone.git
+   cd cs5661-dsproject-Early-Skin-Cancer-Detection-Bringing-Dermatology-to-Everyone 
 2. **Create and activate a virtual environment**
 
    ```bash
