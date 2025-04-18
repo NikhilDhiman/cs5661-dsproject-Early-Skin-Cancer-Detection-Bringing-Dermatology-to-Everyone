@@ -1,6 +1,4 @@
-# 📊 [Project Title Here]
-> Example:  
-> **Early Skin Cancer Detection: Bringing Dermatology to Everyone)**
+# 📊 Early Skin Cancer Detection: Bringing Dermatology to Everyone
 
 ## Project Description (Add the Big Idea)
 
