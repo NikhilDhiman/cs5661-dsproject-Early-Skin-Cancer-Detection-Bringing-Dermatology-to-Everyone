@@ -52,7 +52,7 @@ We want to thank the following individuals who have contributed to this project:
 
 | Name | GitHub Username |
 |---|---|
-| Nikhil Dhiman | [3eltran23](https://github.com/3eltran23) |
+| Nikhil Dhiman | [NikhilDhiman](https://github.com/NikhilDhiman) |
 | Yamini Mandadi | [yami7](https://github.com/yami7)  |
 | Jaydeep Dhirubhai Gondaliya | [Jdpatel180296](https://github.com/Jdpatel180296)  |
 | Sudipta Bhatta | [sudiptabhatta](https://github.com/sudiptabhatta)  |
