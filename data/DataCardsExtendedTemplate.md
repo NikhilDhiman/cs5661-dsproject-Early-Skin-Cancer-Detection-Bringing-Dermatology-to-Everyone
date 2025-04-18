@@ -1556,13 +1556,16 @@ Custom Python Scripts: Designed for domain-specific rule enforcement and logging
 <!-- info: Provide a comparative analysis
 demonstrating before and after
 anomaly handling measures. -->
-Summarize here. Include links, tables, visualizations where available.
+Anomalies in the dataset were addressed through validation of clinical metadata, image-based measurements, and automated predictions (e.g., lesion confidence scores). Corrections or exclusions were made for inconsistent, out-of-range, or missing values.
+
+
 
 **Field Name** | **Diff**
---- | ---
-Field Name | Before: After
-Field Name | Before: After
-... | ...
+age_approx | Before: Included nulls and outliers (e.g., <0 or >100) After: Nulls imputed or removed, outliers filtered
+sex | Before: Missing entries in thousands of records After: Nulls excluded or replaced with "unknown"
+clin_size_long_diam_mm | Before: Contained clinically implausible values After: Outliers cleaned based on dermatological thresholds
+tbp_lv_nevi_confidence | Before: Contained values outside valid [0, 1] range After: Values clipped or removed to ensure model-ready input
+lesion_id | Before: High percentage of nulls for unlabeled lesions After: Unlabeled lesions retained and tagged as “unlabeled” for filtering
 
 **Above:** Provide a caption for the above table or visualization.
 
