@@ -160,17 +160,17 @@ considerations.
 Usage Note: Some statistics will be relevant for numeric data, for not for
 strings. -->
 
-Statistic | Field Name | Field Name | Field Name | Field Name | Field Name | Field Name
+Statistic | Width | Height | FileSize_KB
 --- | --- | --- | --- | --- | --- | ---
-count | 55
-mean |  
-std |
-min |
-25% |
-50% |
-75% |
-max |
-mode |
+count | 401059.00 | 401059.00 | 401059.00
+mean |  133.24531 | 133.24531 | 2.767635
+std |   18.271392  | 18.271392  | 0.581887
+min |   41.000000  | 41.000000  | 0.818359
+25% |   121.00000  | 121.00000  | 2.366211 
+50% |   131.00000  | 131.00000  | 2.721680
+75% |   143.00000  | 143.00000  | 3.117188
+max |   269.00000  | 269.00000  | 7.691406
+mode |  133.00000  | 133.00000  | 2.788086
 
 **Above:** Provide a caption for the above table or visualization.
 
@@ -180,17 +180,10 @@ mode |
 <!-- info: Select ***all applicable*** data types present in the dataset: -->
 - User Content
 - User Metadata
-- User Activity Data
-- Identifiable Data
 - S/PII
-- Business Data
-- Employee Data
-- Pseudonymous Data
 - Anonymous Data
 - Health Data
-- Children’s Data
-- None
-- Others (Please specify)
+
 
 #### Field(s) with Sensitive Data
 <!-- scope: periscope -->
