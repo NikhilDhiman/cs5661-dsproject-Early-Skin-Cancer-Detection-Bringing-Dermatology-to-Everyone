@@ -1,0 +1,8 @@
+pandas
+numpy
+matplotlib
+seaborn
+missingno
+opencv-python
+glob2
+Pillow
