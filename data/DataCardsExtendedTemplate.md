@@ -139,13 +139,6 @@ Number of Labels | broadly classified into 2
 Average Labeles Per Instance | 400666 for benign and 393 for malignant
 
 
-
-
-#### Content Description
-<!-- scope: microscope -->
-<!-- info: Provide a short description of the content in a data point: -->
-Summarize here. Include links if available.
-
 #### Descriptive Statistics
 <!-- width: full -->
 <!-- info: Provide basic descriptive statistics for each field.
@@ -156,17 +149,17 @@ considerations.
 Usage Note: Some statistics will be relevant for numeric data, for not for
 strings. -->
 
-Statistic | Width | Height | FileSize_KB
---- | --- | --- | --- | --- | --- | ---
-count | 401059.00 | 401059.00 | 401059.00
-mean |  133.24531 | 133.24531 | 2.767635
-std |   18.271392  | 18.271392  | 0.581887
-min |   41.000000  | 41.000000  | 0.818359
-25% |   121.00000  | 121.00000  | 2.366211 
-50% |   131.00000  | 131.00000  | 2.721680
-75% |   143.00000  | 143.00000  | 3.117188
-max |   269.00000  | 269.00000  | 7.691406
-mode |  133.00000  | 133.00000  | 2.788086
+Statistic | Width     | Height    | FileSize_KB
+  ---     |    ---    |   ---     |     ---   
+count     | 401059.00 | 401059.00 | 401059.00
+mean      | 133.24531 | 133.24531 | 2.767635
+std       | 18.271392 | 18.271392 | 0.581887
+min       | 41.000000 | 41.000000 | 0.818359
+25%       | 121.00000 | 121.00000 | 2.366211 
+50%       | 131.00000 | 131.00000 | 2.721680
+75%       | 143.00000 | 143.00000 | 3.117188
+max       | 269.00000 | 269.00000 | 7.691406
+mode      | 133.00000 | 133.00000 | 2.788086
 
 **Above:** statistics of image dataset
 
@@ -324,8 +317,6 @@ considerations.** -->
   "label": 0
 }}
 ```
-
-**Additional Notes:** Add here
 
 #### Atypical Data Point
 <!-- width: half -->
@@ -574,13 +565,6 @@ type.) -->
 - Yearly
 
 
-**Additional Links for this collection:**
-
-- [Access Policy]
-- [Wipeout Policy]
-- [Retention Policy]
-
-**Additional Notes:** Add here
 
 #### Source Description(s)
 <!-- scope: microscope -->
@@ -633,21 +617,62 @@ Data fields that were collected and are included in the dataset.
 
 Field Name | Description
 --- | ---
-Field Name | Describe here. Include links, data examples, metrics, visualizations where relevant.
-Field Name | Describe here. Include links, data examples, metrics, visualizations where relevant.
+target	  | Binary class {0: benign, 1: malignant}.
+lesion_id | Unique lesion identifier. Present in lesions that were manually tagged as a lesion of interest.
+iddx_full	| Fully classified lesion diagnosis.
+iddx_1	  | First level lesion diagnosis.
+iddx_2	  | Second level lesion diagnosis.
+iddx_3	  | Third level lesion diagnosis.
+iddx_4	  | Fourth level lesion diagnosis.
+iddx_5	  | Fifth level lesion diagnosis.
+mel_mitotic_index |	Mitotic index of invasive malignant melanomas.
+mel_thick_mm	| Thickness in depth of melanoma invasion.
+tbp_lv_dnn_lesion_confidence | Lesion confidence score (0-100 scale).+
 
-**Additional Notes:** Add here
+isic_id	| Unique case identifier.
+patient_id |	Unique patient identifier.
+age_approx |	Approximate age of patient at time of imaging.
+sex	 | Sex of the person.
+anatom_site_general |	Location of the lesion on the patient's body.
+clin_size_long_diam_mm	| Maximum diameter of the lesion (mm).+
+image_type | Structured field of the ISIC Archive for image type.
+tbp_tile_type |	Lighting modality of the 3D TBP source image.
+tbp_lv_A |	A inside lesion.+
+tbp_lv_Aex |	A outside lesion.+
+tbp_lv_B |	B inside lesion.+
+tbp_lv_Bext |	B outside lesion.+
+tbp_lv_C	| Chroma inside lesion.+
+tbp_lv_Cext |	Chroma outside lesion.+
+tbp_lv_H	| Hue inside the lesion; calculated as the angle of A* and B* in LAB* color space. Typical values range from 25 (red) to 75 (brown).+
+tbp_lv_Hext |	Hue outside lesion.+
+tbp_lv_L |	L inside lesion.+
+tbp_lv_Lext	| L outside lesion.+
+tbp_lv_areaMM2 |	Area of lesion (mm^2).+
+tbp_lv_area_perim_ratio |	Border jaggedness, the ratio between lesions perimeter and area. Circular lesions will have low values; irregular shaped lesions will have higher values. Values range 0-10.+
+tbp_lv_color_std_mean |	Color irregularity, calculated as the variance of colors within the lesion's boundary.
+tbp_lv_deltaA |	Average A contrast (inside vs. outside lesion).+
+tbp_lv_deltaB |	Average  B contrast (inside vs. outside lesion).+
+tbp_lv_deltaL |	Average L contrast (inside vs. outside lesion).+
+tbp_lv_deltaLBnorm |	Contrast between the lesion and its immediate surrounding skin. Low contrast lesions tend to be faintly visible such as freckles; high contrast lesions tend to be those with darker pigment. Calculated as the average delta LB of the lesion relative to its immediate background in LAB* color space. Typical values range from 5.5 to 25.+
+tbp_lv_eccentricity |	Eccentricity.+
+tbp_lv_location |	Classification of anatomical location, divides arms & legs to upper & lower; torso into thirds.+
+tbp_lv_location_simple |	Classification of anatomical location, simple.+
+tbp_lv_minorAxisMM |	Smallest lesion diameter (mm).+
+tbp_lv_nevi_confidence |	Nevus confidence score (0-100 scale) is a convolutional neural network classifier estimated probability that the lesion is a nevus. The neural network was trained on approximately 57,000 lesions that were classified and labeled by a dermatologist.+,++
+tbp_lv_norm_border |	Border irregularity (0-10 scale); the normalized average of border jaggedness and asymmetry.+
+tbp_lv_norm_color |	Color variation (0-10 scale); the normalized average of color asymmetry and color irregularity.+
+tbp_lv_perimeterMM	Perimeter of lesion (mm).+
+tbp_lv_radial_color_std_max |	Color asymmetry, a measure of asymmetry of the spatial distribution of color within the lesion. This score is calculated by looking at the average standard deviation in LAB* color space within concentric rings originating from the lesion center. Values range 0-10.+
+tbp_lv_stdL |	Standard deviation of L inside lesion.+
+tbp_lv_stdLExt |	Standard deviation of L outside lesion.+
+tbp_lv_symm_2axis |	Border asymmetry; a measure of asymmetry of the lesion's contour about an axis perpendicular to the lesion's most symmetric axis. Lesions with two axes of symmetry will therefore have low scores (more symmetric), while lesions with only one or zero axes of symmetry will have higher scores (less symmetric). This score is calculated by comparing opposite halves of the lesion contour over many degrees of rotation. The angle where the halves are most similar identifies the principal axis of symmetry, while the second axis of symmetry is perpendicular to the principal axis. Border asymmetry is reported as the asymmetry value about this second axis. Values range 0-10.+
+tbp_lv_symm_2axis_angle |	Lesion border asymmetry angle.+
+tbp_lv_x |	X-coordinate of the lesion on 3D TBP.+
+tbp_lv_y |	Y-coordinate of the lesion on 3D TBP.+
+tbp_lv_z |	Z-coordinate of the lesion on 3D TBP.+
+attribution |	Image attribution, synonymous with image source.
+copyright_license |	Copyright license.
 
-**Excluded Fields**
-
-Data fields that were collected but are excluded from the dataset.
-
-Field Name | Description
---- | ---
-Field Name | Describe here. Include links, data examples, metrics, visualizations where relevant.
-Field Name | Describe here. Include links, data examples, metrics, visualizations where relevant.
-
-**Additional Notes:** Add here
 
 #### Data Processing
 <!-- scope: microscope -->
