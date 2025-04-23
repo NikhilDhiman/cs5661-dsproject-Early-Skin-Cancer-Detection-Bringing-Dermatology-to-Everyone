@@ -60,16 +60,14 @@ Configuration Files: Files like requirements.txt or .env for managing dependenci
 We want to thank the following individuals who have contributed to this project:
 
 
-| Name | GitHub Username | Roles
-|---|---|
-| Nikhil Dhiman | [NikhilDhiman](https://github.com/NikhilDhiman) | Model Optimization
+## Team Members and Roles
 
-| Yamini Mandadi | [yami7](https://github.com/yami7)  | Feature Engineering 
+| Name                        | GitHub Username                                                                 | Role                    |
+|----------------------------|----------------------------------------------------------------------------------|-------------------------|
+| Nikhil Dhiman              | [NikhilDhiman](https://github.com/NikhilDhiman)                                 | Model Optimization      |
+| Yamini Mandadi             | [yami7](https://github.com/yami7)                                               | Feature Engineering     |
+| Jaydeep Dhirubhai Gondaliya| [Jdpatel180296](https://github.com/Jdpatel180296)                               | Model Evaluation        |
+| Sudipta Bhatta             | [sudiptabhatta](https://github.com/sudiptabhatta)                               | Implement Advanced Model|
+| Akash Saraf                | [sarafakash](https://github.com/sarafakash)                                     | Designing Base Model    |
+| Saurabh Wankhade           | [saurabhsudowankhade](https://github.com/saurabhsudowankhade)                   | Designing Base Model    |
 
-| Jaydeep Dhirubhai Gondaliya | [Jdpatel180296](https://github.com/Jdpatel180296)  | Model Evaluation 
-
-| Sudipta Bhatta | [sudiptabhatta](https://github.com/sudiptabhatta)  | Implement Advance Model 
-
-| Akash Saraf | [sarafakash](https://github.com/sarafakash)  | Designing Base Model
-
-| Saurabh Wankhade | [saurabhsudowankhade](https://github.com/saurabhsudowankhade)  | Designing Base Model
