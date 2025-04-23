@@ -767,11 +767,11 @@ collection method.) -->
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-- **Collection Method of Source:** Summarize data selection criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data selection criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data selection criteria here. Include links where available.
+- **Collection Method of Source:** Lesions were extracted from standardized 3D total body photography (TBP) images captured using the Vectra WB360 system. All selected lesions had corresponding metadata, and selection was automated using the TBP Lesion Visualizer system, which identified and cropped regions of interest.
+- **Collection Method of Source:** Priority was given to lesions with available diagnostic outcomes and metadata fields such as sex, age, clinical site, and lesion size, to support multimodal ML analysis.
+- **Collection Method of Source:** Only lesions from contributing institutions within the International Skin Imaging Collaboration (ISIC) network were considered for inclusion.
 
-**Additional Notes:** Add here
+**Additional Notes:** Automated detection algorithms were employed to minimize bias in manual selection. Lesions lacking minimum metadata or ambiguous cropping results were discarded during preprocessing.
 
 #### Data Inclusion
 <!-- scope: periscope -->
@@ -779,23 +779,22 @@ considerations. -->
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-- **Collection Method of Source:** Summarize data inclusion criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data inclusion criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data inclusion criteria here. Include links where available.
+- **Collection Method of Source:** Included lesions had clearly defined and localized crops in 15x15mm field-of-view windows, consistent with the Vectra WB360 imaging specifications.
+- **Collection Method of Source:** Metadata fields required for inclusion included age, sex, anatomical location, lesion ID, and imaging source.
+- **Collection Method of Source:** Inclusion also required a confirmed diagnostic label (either strong – histopathology-based or weak – clinician-based).
 
-**Additional Notes:** Add here
-
+**Additional Notes:** The dataset ensures demographic and geographic diversity by including data from nine clinical centers across three continents, spanning the years 2015 to 2024.
 #### Data Exclusion
 <!-- scope: microscope -->
 <!-- info: Summarize the data exclusion criteria.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-- **Collection Method of Source:** Summarize data exclusion criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data exclusion criteria here. Include links where available.
-- **Collection Method of Source:** Summarize data exclusion criteria here. Include links where available.
+- **Collection Method of Source:** Lesions with poor image quality, occlusions, or ambiguous boundaries were excluded after visual and algorithmic QC.
+- **Collection Method of Source:** Records with missing or inconsistent key metadata (e.g., age, anatomical site) were filtered out before dataset curation.
+- **Collection Method of Source:** Duplicate lesions or crops with overlapping coordinates across scans or timepoints were also removed to ensure independence across instances.
 
-**Additional Notes:** Add here
+**Additional Notes:** Images used in the validation/test sets were not drawn from patients included in the training set, ensuring patient-level disjoint partitions.
 
 ### Relationship to Source
 #### Use & Utility(ies)
@@ -807,11 +806,12 @@ Use additional notes to capture any other relevant information or
 considerations.
 
 (Usage Note: Duplicate and complete the following for each source type.) -->
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
+- **Source Type:** Clinical imaging centers using the Vectra WB360 scanner provided high-resolution TBP images with lesion annotations. These images were leveraged to create cropped datasets for lesion classification tasks.
+- **Source Type:** Public health and cancer research organizations contributed clinical metadata and histopathological labels to enhance training and benchmarking.
+- **Source Type:** Historical ISIC datasets served as reference baselines, but no direct reuse was applied unless harmonized via SLICE-3D standards.
 
-**Additional Notes:** Add here
+**Additional Notes:** The dataset facilitates large-scale AI model development for early skin cancer detection in full-body imaging contexts.
+
 
 #### Benefit and Value(s)
 <!-- scope: periscope -->
@@ -822,11 +822,12 @@ Use additional notes to capture any other relevant information or
 considerations.
 
 (Usage Note: Duplicate and complete the following for each source type.) -->
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
 
-**Additional Notes:** Add here
+- **Source Type:** TBP imaging standardization allows consistent model performance benchmarking across clinical contexts.
+- **Source Type:** Combination of imaging and metadata offers rich context for multimodal AI models.
+- **Source Type:** Longitudinal data (2015–2024) enables the study of imaging trends, lesion evolution, and population coverage over time.
+
+**Additional Notes:** Permissive and non-commercial licensing variants (CC-BY and CC-BY-NC) support academic and open-source research.
 
 #### Limitation(s) and Trade-Off(s)
 <!-- scope: microscope -->
@@ -835,9 +836,9 @@ compared to the upstream source(s)?
 
 Break down by source type.<br><br>(Usage Note: Duplicate and complete the
 following for each source type.) -->
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
+- **Source Type:** Slight imbalance in class labels (malignant vs. benign) due to real-world prevalence required resampling and augmentation.
+- **Source Type:** Some diagnostic labels are weak (clinician-based), potentially affecting ground truth fidelity.
+- **Source Type:** Metadata completeness varies slightly across institutions, limiting some cross-institutional comparisons.
 
 ### Version and Maintenance
 <!-- info: Fill this next row if this is not the first version of the dataset,
@@ -846,11 +847,11 @@ and there is no data card available for the first version -->
 <!-- scope: periscope -->
 <!-- info: Provide a **basic description of the first version** of this
 dataset. -->
-- **Release date:** MM/YYYY
-- **Link to dataset:** [Dataset Name + Version]
-- **Status:** [Select one: Actively Maintained/Limited Maintenance/Deprecated]
-- **Size of Dataset:** 123 MB
-- **Number of Instances:** 123456
+- **Release date:** 03/2024
+- **Link to dataset:** [SLICE-3D Dataset v1.0](https://doi.org/10.34970/2024-slice-3d)
+- **Status:** Actively Maintained
+- **Size of Dataset:** 1.2 GB (Images), 40 MB (Metadata)
+- **Number of Instances:** 401,059
 
 #### Note(s) and Caveat(s)
 <!-- scope: microscope -->
@@ -859,32 +860,26 @@ dataset that may affect the use of the current version.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-Summarize here. Include links where available.
+Data updates in the ISIC Archive may differ slightly from those used in the challenge datasets. Researchers are advised to reference challenge-specific downloads to ensure reproducibility.
 
-**Additional Notes:** Add here
+**Additional Notes:** Metadata on ISIC Archive is subject to revision over time; citations should always refer to the exact version used.
+
 
 #### Cadence
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Yearly
-- Quarterly
-- Monthly
-- Biweekly
-- Weekly
-- Daily
-- Hourly
-- Static
-- Others (please specify)
+Static (Challenge version is frozen for reproducibility)
 
 #### Last and Next Update(s)
 <!-- scope: periscope -->
 <!-- info: Please describe the update schedule: -->
-- **Date of last update:** DD/MM/YYYY
-- **Total data points affected:** 12345
-- **Data points updated:** 12345
-- **Data points added:** 12345
-- **Data points removed:** 12345
-- **Date of next update:** DD/MM/YYYY
+
+- **Date of last update:** 03/2024
+- **Total data points affected:** Initial release
+- **Data points updated:** 0
+- **Data points added:** 0
+- **Data points removed:** 0
+- **Date of next update:** N/A (Challenge version frozen)
 
 #### Changes on Update(s)
 <!-- scope: microscope -->
@@ -894,8 +889,8 @@ Use additional notes to capture any other relevant information or
 considerations.
 
 (Usage Note: Duplicate and complete the following for each source type.) -->
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
-- **Source Type:** Summarize here. Include links where available.
+- **Source Type:** Any updates will only apply to the ISIC Archive version, not the challenge version.
+- **Source Type:** Minor metadata corrections or updates may appear in the ISIC public collection, but not in SLICE-3D Kaggle release.
+- **Source Type:** Future datasets may extend the SLICE-3D standard for additional competitions.
 
-**Additional Notes:** Add here
+**Additional Notes:** Any update will be documented under a new DOI for reproducibility.
