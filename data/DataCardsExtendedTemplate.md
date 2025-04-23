@@ -628,7 +628,6 @@ iddx_5	  | Fifth level lesion diagnosis.
 mel_mitotic_index |	Mitotic index of invasive malignant melanomas.
 mel_thick_mm	| Thickness in depth of melanoma invasion.
 tbp_lv_dnn_lesion_confidence | Lesion confidence score (0-100 scale).+
-
 isic_id	| Unique case identifier.
 patient_id |	Unique patient identifier.
 age_approx |	Approximate age of patient at time of imaging.
