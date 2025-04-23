@@ -703,8 +703,11 @@ Verified image integrity and brightness levels
 **Tools or libraries:** pandas, numpy, matplotlib, seaborn, missingno, OpenCV, Pillow, scikit-learn
 
 **Additional Notes:** 
+
 Cleaned metadata saved as cleaned_metadata.csv
+
 Dataset is imbalanced (more benign cases); handling strategies to be applied during modeling
+
 No corrupt image files found
 
 ### Collection Criteria
