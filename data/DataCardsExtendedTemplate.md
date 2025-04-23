@@ -685,9 +685,11 @@ relevant information or considerations.
 collection method.) -->
 **Collection Method or Source**
 
-**Description:** The ISIC 2024 Skin Cancer Detection dataset was sourced from the ISIC Challenge on Kaggle. It includes anonymized skin lesion images and metadata collected from multiple international healthcare institutions.
+**Description:** 
+The ISIC 2024 Skin Cancer Detection dataset was sourced from the ISIC Challenge on Kaggle. It includes anonymized skin lesion images and metadata collected from multiple international healthcare institutions.
 
 **Methods employed:** 
+
 Checked for missing values and duplicates
 
 Removed outliers using IQR
@@ -700,7 +702,8 @@ Verified image integrity and brightness levels
 
 **Tools or libraries:** pandas, numpy, matplotlib, seaborn, missingno, OpenCV, Pillow, scikit-learn
 
-**Additional Notes:** Cleaned metadata saved as cleaned_metadata.csv
+**Additional Notes:** 
+Cleaned metadata saved as cleaned_metadata.csv
 Dataset is imbalanced (more benign cases); handling strategies to be applied during modeling
 No corrupt image files found
 
