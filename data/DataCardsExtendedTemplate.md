@@ -10,16 +10,6 @@ This dataset is designed for binary classification tasks-predicting the probabil
 <!-- width: half -->
 [Dataset Link](https://www.kaggle.com/competitions/isic-2024-challenge/data)
 
-#### Data Card Author(s)
-<!-- info: Select **one role per** Data Card Author:
-
-(Usage Note: Select the most appropriate choice to describe the author's role
-in creating the Data Card.) -->
-<!-- width: half -->
-- **Name, Team:** (Owner / Contributor / Manager)
-- **Name, Team:** (Owner / Contributor / Manager)
-- **Name, Team:** (Owner / Contributor / Manager)
-
 ## Authorship
 ### Publishers
 #### Publishing Organization(s)
@@ -280,23 +270,6 @@ considerations. -->
 
 - Typical Data Point Link
 - Outlier Data Point Link
-
-
-#### Data Fields
-<!-- scope: microscope -->
-<!-- info: List the fields in data points and their descriptions.
-
-(Usage Note: Describe each field in a data point. Optionally use this to show
-the example.) -->
-
-Field Name | Field Value | Description
---- | --- | ---
-Field Name | Field Value | Description
-Field Name | Field Value | Description
-Field Name | Field Value | Description
-
-**Above:** Provide a caption for the above table or visualization if used.
-
 
 
 #### Typical Data Point
