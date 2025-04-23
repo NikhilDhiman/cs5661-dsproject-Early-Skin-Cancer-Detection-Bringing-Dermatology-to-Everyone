@@ -103,9 +103,7 @@ Noel Codella, Ph.D.	                Microsoft
 #### Institution(s)
 <!-- scope: telescope -->
 <!-- info: Provide the names of the funding institution(s): -->
--The International Skin Imaging Collaboration (ISIC)
--Canfield Scientific, Inc.
--Kaggle
+-The International Skin Imaging Collaboration (ISIC), Canfield Scientific, Inc., Kaggle
 
 #### Funding or Grant Summary(ies)
 <!-- scope: periscope -->
@@ -115,11 +113,9 @@ the creation, collection, or curation of the dataset.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-*For example, Institution 1 and institution 2 jointly funded this dataset as a
-part of the XYZ data program, funded by XYZ grant awarded by institution 3 for
-the years YYYY-YYYY.*
+The dataset was jointly funded and supported by The International Skin Imaging Collaboration (ISIC), Canfield Scientific, Inc., and Kaggle. This collaboration was formed as part of ISIC’s broader mission to improve the accuracy and accessibility of dermatologic diagnostics through the creation of public datasets, competitions, and research tools. While no specific grant numbers are cited, these institutions contributed resources toward the curation, annotation, and dissemination of the dataset, notably in support of challenges hosted on Kaggle.
 
-Summarize here. Link to documents if available.
+https://challenge2024.isic-archive.com/
 
 ## Dataset Overview
 #### Data Subject(s)
@@ -142,7 +138,7 @@ Labeled Classes | Benign, Malignant
 Number of Labels | broadly classified into 2
 Average Labeles Per Instance | 400666 for benign and 393 for malignant
 
-**Above:** Summary of dataset composition.
+
 
 
 #### Content Description
@@ -172,7 +168,7 @@ min |   41.000000  | 41.000000  | 0.818359
 max |   269.00000  | 269.00000  | 7.691406
 mode |  133.00000  | 133.00000  | 2.788086
 
-**Above:** Provide a caption for the above table or visualization.
+**Above:** statistics of image dataset
 
 ### Sensitivity of Data
 #### Sensitivity Type(s)
@@ -218,13 +214,6 @@ considerations. -->
 - **Access Control:** Data is hosted on Kaggle requiring authenticated login for access.
 - **IRB/Compliance:** Only de-identified data is used; dataset is compliant with institutional ethical approvals.
 
-**Method:** description
-
-**Method:** description
-
-**Method:** description
-
-**Additional Notes:** Add here
 
 #### Risk Type(s)
 <!-- scope: telescope -->
@@ -240,11 +229,7 @@ dataset: -->
 <!-- scope: periscope -->
 <!-- info: Provide link(s) for documentation pertaining to sensitive data in
 the dataset: -->
-**Link Name or Document Type:** link
-
-**Link Name or Document Type:** link
-
-**Link Name or Document Type:** link
+https://challenge2024.isic-archive.com/
 
 #### Risk(s) and Mitigation(s)
 <!-- scope: microscope -->
@@ -278,7 +263,6 @@ considerations. -->
 - **Errors:** Reported issues will be addressed via Kaggle Discussion or GitHub if opened.
 - **Feedback:** User feedback is collected through Kaggle forums.
 
-**Additional Notes:** Add here
 
 #### Next Planned Update(s)
 <!-- scope: periscope -->
@@ -290,14 +274,6 @@ considerations. -->
 
 ---
 
-**Updates to Data:** Summarize here. Include links, charts, and visualizations
-as appropriate.
-
-**Updates to Dataset:** Summarize here. Include links, charts, and
-visualizations as appropriate.
-
-**Additional Notes:** Add here
-
 ## Example of Data Points
 #### Primary Data Modality
 <!-- scope: telescope -->
@@ -308,11 +284,10 @@ visualizations as appropriate.
 #### Sampling of Data Points
 <!-- scope: periscope -->
 <!-- info: Provide link(s) to data points or exploratory demos: -->
-- Demo Link
+
 - Typical Data Point Link
 - Outlier Data Point Link
-- Other Data Point Link
-- Other Data Point Link
+
 
 #### Data Fields
 <!-- scope: microscope -->
@@ -329,7 +304,7 @@ Field Name | Field Value | Description
 
 **Above:** Provide a caption for the above table or visualization if used.
 
-**Additional Notes:** Add here
+
 
 #### Typical Data Point
 <!-- width: half -->
@@ -484,13 +459,7 @@ dataset: -->
 <!-- scope: microscope -->
 <!-- info: Please describe any required training or prerequisites to access
 this dataset. -->
-For example:
-
-This dataset requires membership in [specific] database groups:
-
-- Complete the [Mandatory Training]
-- Read [Data Usage Policy]
-- Initiate a Data Requesting by filing
+N/A
 
 #### Policy Link(s)
 <!-- scope: periscope -->
@@ -510,13 +479,7 @@ dataset. Include links where necessary.
 
 Use additional notes to capture any other information relevant to accessing
 the dataset. -->
-**Access Control List:** Write summary and notes here.
-
-**Access Control List:** Write summary and notes here.
-
-**Access Control List:** Write summary and notes here.
-
-**Additional Notes:** Add here
+[\[Link\]]https://creativecommons.org/licenses/by-nc/4.0/
 
 ### Retention
 - **Duration:** Indefinite
@@ -533,9 +496,9 @@ Use additional notes to capture any other relevant information or
 considerations. -->
 For example:
 
-This dataset compiles with [standard policy guidelines].
+This dataset compiles with [\[standard policy guidelines\]](https://creativecommons.org/licenses/by-nc/4.0/).
 
-**Additional Notes:** Add here
+
 
 #### Exception(s) and Exemption(s)
 <!-- scope: microscope -->
@@ -549,9 +512,6 @@ considerations. -->
 `INTERNAL_BUSINESS_DATA` /
 `SIMULATED_TEST_DATA`
 
-**Summary:** Write summary and notes here.
-
-**Additional Notes:** Add here
 
 ### Wipeout and Deletion
 - **Acceptable Means of Deletion:** Dataset hosted on Kaggle can be versioned down or removed upon request by data providers.
@@ -563,64 +523,8 @@ considerations. -->
 <!-- scope: periscope -->
 <!-- info: Specify the duration after which this dataset should be deleted or
 wiped out: -->
-Specify duration in days, months, or years.
+N/A
 
-#### Deletion Event Summary
-<!-- scope: microscope -->
-<!-- info: Summarize the sequence of events and allowable processing for data
-deletion.
-
-Use additional notes to capture any other relevant information or
-considerations. -->
-**Sequence of deletion and processing events:**
-
-- Summarize first event here
-- Summarize second event here
-- Summarize third event here
-
-**Additional Notes:** Add here
-
-#### Acceptable Means of Deletion
-<!-- scope: periscope -->
-<!-- info: List the acceptable means of deletion: -->
-- Write acceptable means of deletion
-- Write acceptable means of deletion
-- Write acceptable means of deletion
-
-#### Post-Deletion Obligations
-<!-- scope: microscope -->
-<!-- info: Summarize the sequence of obligations after a deletion event.
-
-**Use additional notes to capture any other relevant information or
-considerations.** -->
-**Sequence of post-deletion obligations:**
-
-- Summarize first obligation here
-- Summarize second obligation here
-- Summarize third obligation here
-
-**Additional Notes:** Add here
-
-#### Operational Requirement(s)
-<!-- scope: periscope -->
-<!-- info: List any wipeout integration operational requirements: -->
-**Wipeout Integration Operational Requirements:**
-
-- Write first requirement here
-- Write second requirement here
-- Write third requirement here
-
-#### Exceptions and Exemptions
-<!-- scope: microscope -->
-<!-- info: Summarize any exceptions and related steps to a deletion event.
-
-**Use additional notes to capture any other relevant information or
-considerations.** -->
-**Policy Exception bug:** [bug]
-
-**Summary:** Write summary and notes here
-
-**Additional Notes:** Add here
 
 ## Provenance
 ### Collection
@@ -629,17 +533,9 @@ considerations.** -->
 #### Method(s) Used
 <!-- scope: telescope -->
 <!-- info: Select **all applicable** methods used to collect data: -->
-- API
-- Artificially Generated
-- Crowdsourced - Paid
 - Crowdsourced - Volunteer
 - Vendor Collection Efforts
-- Scraped or Crawled
-- Survey, forms, or polls
-- Taken from other existing datasets
-- Unknown
-- To be determined
-- Others (please specify)
+
 
 #### Methodology Detail(s)
 <!-- scope: periscope -->
@@ -652,19 +548,24 @@ considerations.
 type.) -->
 **Collection Type**
 
-**Source:** Describe here. Include links where available.
+- **Source**: The dataset was collected by the International Skin Imaging Collaboration (ISIC) consortium across nine international dermatology centers. The 2D image crops were extracted from 3D Total Body Photography (TBP) images using the Vectra WB360 system from Canfield Scientific. AI-based software (Lesion Visualizer) automatically detected lesions and generated crops with metadata.  
+  → Source reference: [Scientific Data publication](https://www.nature.com/articles/s41597-024-03743-w)
 
-**Platform:** [Platform Name], Describe platform here. Include links where relevant.
+- **Platform**: [Vectra WB360 by Canfield Scientific](https://www.canfieldsci.com/imaging-systems/vectra-wb360-whole-body-imaging-system/). Lesions were identified using proprietary AI software called **Lesion Visualizer**, also developed by Canfield Scientific.
 
-**Is this source considered sensitive or high-risk?** [Yes/No]
 
-**Dates of Collection:** - January 2015 – March 2024
+- **Is this source considered sensitive or high-risk?**: ✅ **Yes**  
+  → Contains de-identified health information including age, sex, anatomical site, and clinical/pathological diagnoses.
 
-**Primary modality of collection data:**
+- **Dates of Collection**: **Jan 2015 – Jan 2024**
 
-*Usage Note: Select one for this collection type.*
+- **Primary modality of collection data**:
+  - ✅ **Image Data**
+  - ✅ **Tabular Data** (Metadata: age, sex, diagnosis, location)
+  - ⬜ Text Data
+  - ⬜ Audio/Video
+  - ⬜ Others
 
-- Image Data
 
 **Update Frequency for collected data:**
 
@@ -687,11 +588,19 @@ type.) -->
 
 Use additional notes to capture any other relevant information or
 considerations. -->
-- **Source:** Describe here. Include links, data examples, metrics, visualizations where relevant.
-- **Source:** Describe here. Include links, data examples, metrics, visualizations where relevant.
-- **Source:** Describe here. Include links, data examples, metrics, visualizations where relevant.
+- **Source**:  
+  Data was collected from 3D body scans and pathology-verified medical records at international medical institutions. Lesions were AI-annotated and manually reviewed by board-certified dermatologists.
 
-**Additional Notes:** Add here
+- **Source**:  
+  Strong labels were generated through histopathology within 3 months of image capture. Weak labels were clinical assessments by dermatologists.
+
+- **Source**:  
+  Data includes samples from Memorial Sloan Kettering Cancer Center, Hospital Clínic de Barcelona, University of Queensland, University of Athens, FNQH Cairns, Melanoma Institute Australia, Alfred Hospital, and Medical University of Vienna.
+
+**Additional Notes**:  
+- Dataset versions: **SLICE-3D** and **SLICE-3D Permissive**  
+- Licensing: CC-BY-NC 4.0 (standard) and CC-BY 4.0 (permissive subset)  
+- Website: [https://challenge2024.isic-archive.com](https://challenge2024.isic-archive.com)
 
 #### Collection Cadence
 <!-- scope: telescope -->
@@ -702,7 +611,7 @@ considerations. -->
 
 **Dynamic:** Data is updated regularly from single or multiple sources.
 
-**Others:** Please specify
+
 
 #### Data Integration
 <!-- scope: periscope -->
