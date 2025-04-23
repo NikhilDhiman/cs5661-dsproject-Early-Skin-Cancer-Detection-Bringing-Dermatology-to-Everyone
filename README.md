@@ -42,14 +42,25 @@
    pip install -r requirements.txt
    ```
 
-## Usage
+## Repository 
+This repository contains the following components:
+
+Notebooks: Jupyter notebooks demonstrating data analysis, model training, or other relevant workflows.
+
+Data: Sample datasets or links to external data sources used in the notebooks or experiments.
+
+Documentation: README files, setup instructions, and usage guidelines to help users understand and use the project effectively.
+
+Scripts/Code: Python scripts or modules that provide core functionality, such as data preprocessing, model implementation, or utility functions.
+
+Configuration Files: Files like requirements.txt or .env for managing dependencies and environment setup.
 
 ## Contributors
 
 We want to thank the following individuals who have contributed to this project:
 
 
-| Name | GitHub Username |
+| Name | GitHub Username | Roles
 |---|---|
 | Nikhil Dhiman | [NikhilDhiman](https://github.com/NikhilDhiman) |
 | Yamini Mandadi | [yami7](https://github.com/yami7)  |
