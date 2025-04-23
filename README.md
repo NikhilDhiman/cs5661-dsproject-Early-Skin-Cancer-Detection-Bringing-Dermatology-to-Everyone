@@ -62,9 +62,9 @@ We want to thank the following individuals who have contributed to this project:
 
 | Name | GitHub Username | Roles
 |---|---|
-| Nikhil Dhiman | [NikhilDhiman](https://github.com/NikhilDhiman) |
-| Yamini Mandadi | [yami7](https://github.com/yami7)  |
-| Jaydeep Dhirubhai Gondaliya | [Jdpatel180296](https://github.com/Jdpatel180296)  |
-| Sudipta Bhatta | [sudiptabhatta](https://github.com/sudiptabhatta)  |
-| Akash Saraf | [sarafakash](https://github.com/sarafakash)  |
-| Saurabh Wankhade | [saurabhsudowankhade](https://github.com/saurabhsudowankhade)  |
+| Nikhil Dhiman | [NikhilDhiman](https://github.com/NikhilDhiman) | Model Optimization
+| Yamini Mandadi | [yami7](https://github.com/yami7)  | Feature Engineering 
+| Jaydeep Dhirubhai Gondaliya | [Jdpatel180296](https://github.com/Jdpatel180296)  | Model Evaluation 
+| Sudipta Bhatta | [sudiptabhatta](https://github.com/sudiptabhatta)  | Implement Advance Model 
+| Akash Saraf | [sarafakash](https://github.com/sarafakash)  | Designing Base Model
+| Saurabh Wankhade | [saurabhsudowankhade](https://github.com/saurabhsudowankhade)  | Designing Base Model
